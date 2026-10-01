@@ -54,6 +54,8 @@ def metric(rows):
         return round(latency[min(len(latency)-1, int((len(latency)-1)*p))], 3)
     history = [r for r in answered if r["capability"] == "history"]
     expiry = [r for r in answered if r["expected"]["state"] == "expired"]
+    lag_rows = [r for r in answered if "update_lag_ms" in r]
+    observed_lags = sorted(r["update_lag_ms"] for r in lag_rows if not r["update_lag_censored"])
     return {
         "transition_success_rate": {"score": ratio(sum(t["success"] for t in transitions), len(transitions)), "cases": len(transitions)},
         "current_state_accuracy": {"score": ratio(sum(same(r["prediction"], r["expected"]) for r in current), len(current)), "cases": len(current)},
@@ -64,6 +66,10 @@ def metric(rows):
         "historical_accuracy": {"score": ratio(sum(same(r["prediction"], r["expected"]) for r in history), len(history)), "cases": len(history)},
         "expiration_accuracy": {"score": ratio(sum(same(r["prediction"], r["expected"]) for r in expiry), len(expiry)), "cases": len(expiry)},
         "query_latency_ms": {"p50": percentile(.5), "p95": percentile(.95), "cases": len(latency)},
+        "update_lag_ms": {"observed_mean": round(statistics.mean(observed_lags), 3) if observed_lags else None,
+                          "observed_p95": observed_lags[min(len(observed_lags)-1, int(.95*(len(observed_lags)-1)))] if observed_lags else None,
+                          "observed": len(observed_lags), "censored": len(lag_rows)-len(observed_lags),
+                          "post_change_cases": len(lag_rows)},
         "reported_tokens": {"prompt": sum(u.get("prompt_tokens", 0) for u in token_usage),
                             "completion": sum(u.get("completion_tokens", 0) for u in token_usage),
                             "cases_with_usage": sum(bool(u) for u in token_usage)},

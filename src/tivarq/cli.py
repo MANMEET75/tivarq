@@ -19,6 +19,9 @@ def main():
     command.add_argument("--track", choices=("structured", "conversation"), default="structured")
     command.add_argument("--output", type=Path, default=Path("runs/smoke"))
     command.add_argument("--repeat", type=int, default=1)
+    command.add_argument("--update-polls", type=int, default=0,
+                         help="extra post-change polls for measuring asynchronous update lag")
+    command.add_argument("--poll-interval-ms", type=int, default=100)
     command.add_argument("--seed", type=int, default=20261001)
     command.add_argument("--model-config", default="none")
     command.add_argument("--prompt-config", default="none")
@@ -31,11 +34,12 @@ def main():
         print(json.dumps(validate_dataset(args.dataset), indent=2))
     else:
         cmd = args.adapter[1:] if args.adapter and args.adapter[0] == "--" else args.adapter
-        if not cmd or args.repeat < 1:
-            parser.error("run requires -- adapter-command and repeat >= 1")
+        if not cmd or args.repeat < 1 or args.update_polls < 0 or args.poll_interval_ms < 0:
+            parser.error("run requires -- adapter-command and nonnegative polling settings")
         print(json.dumps(run(args.dataset, args.split, args.track, cmd, args.output,
             repeat=args.repeat, model_config=args.model_config, prompt_config=args.prompt_config,
-            seed=args.seed)[0], indent=2))
+            seed=args.seed, update_polls=args.update_polls,
+            poll_interval_ms=args.poll_interval_ms)[0], indent=2))
 
 
 if __name__ == "__main__":

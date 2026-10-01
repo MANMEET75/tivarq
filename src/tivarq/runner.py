@@ -9,11 +9,12 @@ import statistics
 
 from .dataset import load_split
 from .protocol import Adapter
-from .scoring import report
+from .scoring import report, same
 
 
 def run(dataset: Path, split: str, track: str, command: list[str], output: Path, *, repeat: int = 1,
-        model_config: str = "none", prompt_config: str = "none", seed: int = 20261001):
+        model_config: str = "none", prompt_config: str = "none", seed: int = 20261001,
+        update_polls: int = 0, poll_interval_ms: int = 100):
     if track not in ("structured", "conversation"):
         raise ValueError("track must be structured or conversation")
     episodes, probes = load_split(dataset, split)
@@ -30,6 +31,7 @@ def run(dataset: Path, split: str, track: str, command: list[str], output: Path,
                 "dataset_source": str(dataset), "harness_commit": harness_commit, "track": track,
                 "split": split, "adapter_command": command, "model_config": model_config,
                 "prompt_config": prompt_config, "run_seed": seed, "repeats": repeat,
+                "update_polls": update_polls, "poll_interval_ms": poll_interval_ms,
                 "sampling_settings": os.environ.get("TIVARQ_SAMPLING", "unspecified")}
     summaries = []
     for repetition in range(repeat):
@@ -79,6 +81,19 @@ def run(dataset: Path, split: str, track: str, command: list[str], output: Path,
                                     raise ValueError("query response requires normalized state")
                                 row.update({"status": "answered", "prediction": response,
                                             "latency_ms": round(ms, 3)})
+                                if row["role"] == "target" and row["phase"] == "post":
+                                    elapsed = ms
+                                    retries = 0
+                                    latest = response
+                                    while not same(latest, row["expected"]) and retries < update_polls:
+                                        time.sleep(poll_interval_ms / 1000)
+                                        elapsed += poll_interval_ms
+                                        latest, extra_ms = adapter.call(query)
+                                        elapsed += extra_ms
+                                        retries += 1
+                                    row["update_lag_ms"] = round(elapsed, 3)
+                                    row["update_lag_polls"] = retries
+                                    row["update_lag_censored"] = not same(latest, row["expected"])
                             except Exception as exc:
                                 row.update({"status": "error", "error": str(exc)})
                         rows.append(row)

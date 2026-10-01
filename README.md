@@ -47,7 +47,7 @@ The canonical data is [MANMEET75/TIVARQ](https://huggingface.co/datasets/MANMEET
 
 ```bash
 python -m pip install "huggingface_hub>=0.36,<2"
-export TIVARQ_DATASET_REVISION="REPLACE_WITH_PUBLISHED_COMMIT_SHA"
+export TIVARQ_DATASET_REVISION="cae7ab63ff9daf1f9d167978d5496b93554ac447"
 python - <<'PY'
 import os
 from huggingface_hub import snapshot_download
@@ -123,9 +123,10 @@ The scorer compares normalized state and value exactly; list values are treated 
 | Abstention precision/recall/F1 | Binary classification for `unknown`, `withdrawn`, or `expired` versus an asserted choice. Higher is better. |
 | Historical accuracy | Correct historical probes ÷ answered historical probes, only for adapters declaring history. |
 | Expiration accuracy | Correct expired probes ÷ answered expiration probes, only where clock is declared. |
-| Query latency | Wall-clock p50/p95 in milliseconds; separate from quality. |
+| Update lag | Time from first post-change query until a correct answer, with observed and censored case counts. Use `--update-polls 5 --poll-interval-ms 100` to allow asynchronous systems to catch up. Official quality still uses the first answer. |
+| Query latency and operating cost | Wall-clock p50/p95 query latency, plus optional reported prompt/completion tokens and USD cost; separate from quality. |
 
-The primary interval is an **episode-level 95% bootstrap confidence interval** with 500 seeded resamples. Reports include every denominator, capability coverage, and a family breakdown. Unsupported optional probes are counted as unsupported. Errors make a run incomplete. For asynchronous memory systems, inspect per-probe traces for update delay; v1 has sparse checkpoints and does not claim a precise continuous update-lag estimate.
+The primary interval is an **episode-level 95% bootstrap confidence interval** with 500 seeded resamples. Reports include every denominator, capability coverage, and a family breakdown. Unsupported optional probes are counted as unsupported. Errors make a run incomplete. The update-lag clock starts at the first post-change query, not at message arrival; v1's sparse checkpoints do not establish continuous time to consistency. The polling command sends extra read-only queries only for lag measurement.
 
 ## Reproducibility and limitations
 

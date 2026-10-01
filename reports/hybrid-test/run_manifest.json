@@ -10,7 +10,7 @@
     "probes_test.jsonl": "f8f8944a12bbd3e53d4ef11558536f28c09a3621c55741cf98723274edd87055"
   },
   "dataset_source": "dataset",
-  "harness_commit": "f88a5d30fc773657a43259efd942120a57606352",
+  "harness_commit": "a7c3c0bbee899806e8549eb0914b526c39c0eace",
   "track": "conversation",
   "split": "test",
   "adapter_command": [
@@ -23,6 +23,8 @@
   "prompt_config": "none",
   "run_seed": 20261001,
   "repeats": 1,
+  "update_polls": 0,
+  "poll_interval_ms": 100,
   "sampling_settings": "unspecified",
   "adapter_version": "1.0.0",
   "capabilities": {

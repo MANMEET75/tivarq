@@ -48,9 +48,16 @@
       "cases": 0
     },
     "query_latency_ms": {
-      "p50": 0.029,
-      "p95": 0.056,
+      "p50": 0.031,
+      "p95": 0.075,
       "cases": 810
+    },
+    "update_lag_ms": {
+      "observed_mean": 0.039,
+      "observed_p95": 0.081,
+      "observed": 165,
+      "censored": 30,
+      "post_change_cases": 195
     },
     "reported_tokens": {
       "prompt": 0,
@@ -114,9 +121,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.021,
-          "p95": 0.04,
+          "p50": 0.028,
+          "p95": 0.056,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.036,
+          "observed_p95": 0.046,
+          "observed": 15,
+          "censored": 15,
+          "post_change_cases": 30
         },
         "reported_tokens": {
           "prompt": 0,
@@ -176,9 +190,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.029,
-          "p95": 0.056,
+          "p50": 0.031,
+          "p95": 0.058,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.035,
+          "observed_p95": 0.055,
+          "observed": 30,
+          "censored": 0,
+          "post_change_cases": 30
         },
         "reported_tokens": {
           "prompt": 0,
@@ -238,9 +259,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.036,
-          "p95": 0.056,
+          "p50": 0.033,
+          "p95": 0.081,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": null,
+          "observed_p95": null,
+          "observed": 0,
+          "censored": 15,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -300,9 +328,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.032,
-          "p95": 0.058,
+          "p50": 0.035,
+          "p95": 0.078,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.048,
+          "observed_p95": 0.096,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -362,9 +397,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.025,
-          "p95": 0.041,
+          "p50": 0.034,
+          "p95": 0.064,
           "cases": 45
+        },
+        "update_lag_ms": {
+          "observed_mean": null,
+          "observed_p95": null,
+          "observed": 0,
+          "censored": 0,
+          "post_change_cases": 0
         },
         "reported_tokens": {
           "prompt": 0,
@@ -424,9 +466,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.032,
-          "p95": 0.064,
+          "p50": 0.024,
+          "p95": 0.059,
           "cases": 45
+        },
+        "update_lag_ms": {
+          "observed_mean": null,
+          "observed_p95": null,
+          "observed": 0,
+          "censored": 0,
+          "post_change_cases": 0
         },
         "reported_tokens": {
           "prompt": 0,
@@ -486,9 +535,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.037,
-          "p95": 0.057,
+          "p50": 0.04,
+          "p95": 0.095,
           "cases": 60
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.04,
+          "observed_p95": 0.059,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -548,9 +604,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.033,
-          "p95": 0.066,
+          "p50": 0.03,
+          "p95": 0.06,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.029,
+          "observed_p95": 0.042,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -610,9 +673,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.028,
-          "p95": 0.051,
+          "p50": 0.034,
+          "p95": 0.079,
           "cases": 75
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.049,
+          "observed_p95": 0.1,
+          "observed": 30,
+          "censored": 0,
+          "post_change_cases": 30
         },
         "reported_tokens": {
           "prompt": 0,
@@ -672,9 +742,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.022,
-          "p95": 0.047,
+          "p50": 0.027,
+          "p95": 0.07,
           "cases": 90
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.037,
+          "observed_p95": 0.092,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -734,9 +811,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.027,
-          "p95": 0.054,
+          "p50": 0.032,
+          "p95": 0.064,
           "cases": 60
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.035,
+          "observed_p95": 0.049,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,
@@ -796,9 +880,16 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.021,
-          "p95": 0.042,
+          "p50": 0.032,
+          "p95": 0.058,
           "cases": 60
+        },
+        "update_lag_ms": {
+          "observed_mean": 0.035,
+          "observed_p95": 0.05,
+          "observed": 15,
+          "censored": 0,
+          "post_change_cases": 15
         },
         "reported_tokens": {
           "prompt": 0,

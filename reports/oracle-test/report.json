@@ -48,13 +48,13 @@
       "cases": 15
     },
     "query_latency_ms": {
-      "p50": 0.031,
-      "p95": 0.078,
+      "p50": 0.051,
+      "p95": 0.142,
       "cases": 900
     },
     "update_lag_ms": {
-      "observed_mean": 0.039,
-      "observed_p95": 0.081,
+      "observed_mean": 0.087,
+      "observed_p95": 0.162,
       "observed": 240,
       "censored": 0,
       "post_change_cases": 240
@@ -121,13 +121,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.03,
-          "p95": 0.093,
+          "p50": 0.049,
+          "p95": 0.838,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.044,
-          "observed_p95": 0.093,
+          "observed_mean": 0.257,
+          "observed_p95": 0.305,
           "observed": 30,
           "censored": 0,
           "post_change_cases": 30
@@ -190,13 +190,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.025,
-          "p95": 0.078,
+          "p50": 0.06,
+          "p95": 0.147,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.036,
-          "observed_p95": 0.06,
+          "observed_mean": 0.074,
+          "observed_p95": 0.147,
           "observed": 30,
           "censored": 0,
           "post_change_cases": 30
@@ -259,13 +259,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.025,
-          "p95": 0.07,
+          "p50": 0.06,
+          "p95": 0.123,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.03,
-          "observed_p95": 0.056,
+          "observed_mean": 0.081,
+          "observed_p95": 0.142,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -328,13 +328,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.025,
-          "p95": 0.062,
+          "p50": 0.062,
+          "p95": 0.144,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.036,
-          "observed_p95": 0.061,
+          "observed_mean": 0.076,
+          "observed_p95": 0.123,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -397,13 +397,13 @@
           "cases": 15
         },
         "query_latency_ms": {
-          "p50": 0.035,
-          "p95": 0.068,
+          "p50": 0.077,
+          "p95": 0.287,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.04,
-          "observed_p95": 0.059,
+          "observed_mean": 0.117,
+          "observed_p95": 0.236,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -466,13 +466,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.033,
-          "p95": 0.069,
+          "p50": 0.052,
+          "p95": 0.097,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.035,
-          "observed_p95": 0.056,
+          "observed_mean": 0.055,
+          "observed_p95": 0.097,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -535,13 +535,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.04,
-          "p95": 0.085,
+          "p50": 0.029,
+          "p95": 0.056,
           "cases": 60
         },
         "update_lag_ms": {
-          "observed_mean": 0.048,
-          "observed_p95": 0.08,
+          "observed_mean": 0.032,
+          "observed_p95": 0.05,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -604,13 +604,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.031,
-          "p95": 0.074,
+          "p50": 0.057,
+          "p95": 0.119,
           "cases": 105
         },
         "update_lag_ms": {
-          "observed_mean": 0.043,
-          "observed_p95": 0.083,
+          "observed_mean": 0.066,
+          "observed_p95": 0.114,
           "observed": 30,
           "censored": 0,
           "post_change_cases": 30
@@ -673,13 +673,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.035,
-          "p95": 0.071,
+          "p50": 0.031,
+          "p95": 0.051,
           "cases": 75
         },
         "update_lag_ms": {
-          "observed_mean": 0.044,
-          "observed_p95": 0.071,
+          "observed_mean": 0.034,
+          "observed_p95": 0.048,
           "observed": 30,
           "censored": 0,
           "post_change_cases": 30
@@ -742,13 +742,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.037,
-          "p95": 0.077,
+          "p50": 0.053,
+          "p95": 0.112,
           "cases": 90
         },
         "update_lag_ms": {
-          "observed_mean": 0.043,
-          "observed_p95": 0.077,
+          "observed_mean": 0.06,
+          "observed_p95": 0.107,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -811,13 +811,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.028,
-          "p95": 0.056,
+          "p50": 0.053,
+          "p95": 0.139,
           "cases": 60
         },
         "update_lag_ms": {
-          "observed_mean": 0.032,
-          "observed_p95": 0.056,
+          "observed_mean": 0.082,
+          "observed_p95": 0.139,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15
@@ -880,13 +880,13 @@
           "cases": 0
         },
         "query_latency_ms": {
-          "p50": 0.029,
-          "p95": 0.082,
+          "p50": 0.028,
+          "p95": 0.063,
           "cases": 60
         },
         "update_lag_ms": {
-          "observed_mean": 0.034,
-          "observed_p95": 0.049,
+          "observed_mean": 0.027,
+          "observed_p95": 0.042,
           "observed": 15,
           "censored": 0,
           "post_change_cases": 15

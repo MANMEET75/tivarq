@@ -10,7 +10,7 @@
     "probes_test.jsonl": "f8f8944a12bbd3e53d4ef11558536f28c09a3621c55741cf98723274edd87055"
   },
   "dataset_source": "dataset",
-  "harness_commit": "a7c3c0bbee899806e8549eb0914b526c39c0eace",
+  "harness_commit": "e4c0c28529454d566b5d29a5569283dc713ef489",
   "track": "conversation",
   "split": "test",
   "adapter_command": [

@@ -1,0 +1,815 @@
+{
+  "complete": true,
+  "probe_counts": {
+    "total": 900,
+    "answered": 900,
+    "unsupported": 0,
+    "error": 0
+  },
+  "metrics": {
+    "transition_success_rate": {
+      "score": 0.846154,
+      "cases": 195
+    },
+    "current_state_accuracy": {
+      "score": 0.982759,
+      "cases": 870
+    },
+    "stale_value_leakage_rate": {
+      "score": 0.133333,
+      "cases": 225
+    },
+    "unaffected_fact_retention": {
+      "score": 1.0,
+      "cases": 195
+    },
+    "clarification": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 15,
+      "fp": 0,
+      "fn": 0
+    },
+    "abstention": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.666667,
+      "tp": 15,
+      "fp": 0,
+      "fn": 15
+    },
+    "historical_accuracy": {
+      "score": 0.5,
+      "cases": 30
+    },
+    "expiration_accuracy": {
+      "score": 0.0,
+      "cases": 15
+    },
+    "query_latency_ms": {
+      "p50": 0.031,
+      "p95": 0.065,
+      "cases": 900
+    },
+    "reported_tokens": {
+      "prompt": 0,
+      "completion": 0,
+      "cases_with_usage": 0
+    },
+    "reported_cost_usd": {
+      "total": 0,
+      "cases_with_cost": 0
+    }
+  },
+  "transition_success_95pct_bootstrap_ci": [
+    0.809524,
+    0.885965
+  ],
+  "by_family": {
+    "add_vs_replace": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.036,
+          "p95": 0.056,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "ambiguity": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 30
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 15,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.032,
+          "p95": 0.087,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "delayed_arrival": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.033,
+          "p95": 0.072,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "duplicate_event": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.029,
+          "p95": 0.086,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "expiration": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 0.8,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 15
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "query_latency_ms": {
+          "p50": 0.031,
+          "p95": 0.052,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "future_effective": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.036,
+          "p95": 0.062,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "replacement": {
+      "probe_counts": {
+        "total": 60,
+        "answered": 60
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 60
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.039,
+          "p95": 0.072,
+          "cases": 60
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "retro_correction": {
+      "probe_counts": {
+        "total": 105,
+        "answered": 105
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 0.5,
+          "cases": 30
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.5,
+          "cases": 30
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": 0.5,
+          "cases": 30
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.03,
+          "p95": 0.063,
+          "cases": 105
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "reversal": {
+      "probe_counts": {
+        "total": 75,
+        "answered": 75
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 75
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 30
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.028,
+          "p95": 0.048,
+          "cases": 75
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "scoped_change": {
+      "probe_counts": {
+        "total": 90,
+        "answered": 90
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 90
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 30
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.031,
+          "p95": 0.059,
+          "cases": 90
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "third_party_quote": {
+      "probe_counts": {
+        "total": 60,
+        "answered": 60
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 60
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.019,
+          "p95": 0.079,
+          "cases": 60
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    },
+    "withdrawal": {
+      "probe_counts": {
+        "total": 60,
+        "answered": 60
+      },
+      "metrics": {
+        "transition_success_rate": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "current_state_accuracy": {
+          "score": 1.0,
+          "cases": 60
+        },
+        "stale_value_leakage_rate": {
+          "score": 0.0,
+          "cases": 15
+        },
+        "unaffected_fact_retention": {
+          "score": 1.0,
+          "cases": 15
+        },
+        "clarification": {
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "abstention": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 15,
+          "fp": 0,
+          "fn": 0
+        },
+        "historical_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "expiration_accuracy": {
+          "score": null,
+          "cases": 0
+        },
+        "query_latency_ms": {
+          "p50": 0.027,
+          "p95": 0.057,
+          "cases": 60
+        },
+        "reported_tokens": {
+          "prompt": 0,
+          "completion": 0,
+          "cases_with_usage": 0
+        },
+        "reported_cost_usd": {
+          "total": 0,
+          "cases_with_cost": 0
+        }
+      }
+    }
+  }
+}

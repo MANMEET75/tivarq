@@ -1,0 +1,38 @@
+{
+  "schema_version": "tivarq.run.v1",
+  "dataset_revision": "local-generated",
+  "dataset_file_hashes": {
+    "episodes_dev.jsonl": "d743eda91367d2c2240d34e7f244366d316ecf503696863c9052306acbabce47",
+    "episodes_smoke.jsonl": "1904f6db1eaafb34e73568da88cea077696919a395221ecd57e2c07f32149b3c",
+    "episodes_test.jsonl": "4e516c4fe66571e8d574452a91827e5c560f4bbca7e8ae73f99c5460cc0316d0",
+    "probes_dev.jsonl": "acd5ce41d6f6859c4f352777e3c29196ff9ed2222e4073ac546b2212173de0c8",
+    "probes_smoke.jsonl": "20ea59a82f8fc96fc8da70361c73e3e3dc59c25ce872fed401d18d1d7ca65159",
+    "probes_test.jsonl": "f8f8944a12bbd3e53d4ef11558536f28c09a3621c55741cf98723274edd87055"
+  },
+  "dataset_source": "dataset",
+  "harness_commit": "f88a5d30fc773657a43259efd942120a57606352",
+  "track": "conversation",
+  "split": "test",
+  "adapter_command": [
+    ".venv/bin/python",
+    "-m",
+    "tivarq.baselines",
+    "hybrid"
+  ],
+  "model_config": "none",
+  "prompt_config": "none",
+  "run_seed": 20261001,
+  "repeats": 1,
+  "sampling_settings": "unspecified",
+  "adapter_version": "1.0.0",
+  "capabilities": {
+    "protocol": "tivarq.adapter.v1",
+    "adapter_version": "1.0.0",
+    "tracks": [
+      "conversation"
+    ],
+    "clock": true,
+    "history": true,
+    "inspection": true
+  }
+}

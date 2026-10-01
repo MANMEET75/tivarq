@@ -86,13 +86,15 @@ def report(rows, seed=20261001):
     rng = random.Random(seed)
     episodes = sorted({r["episode_id"] for r in rows})
     by_episode = {e: [r for r in rows if r["episode_id"] == e] for e in episodes}
+    per_episode = {e: metric(by_episode[e])["transition_success_rate"] for e in episodes}
     boot = []
     if episodes:
         for _ in range(500):
-            sample = [r for e in rng.choices(episodes, k=len(episodes)) for r in by_episode[e]]
-            score = metric(sample)["transition_success_rate"]["score"]
-            if score is not None:
-                boot.append(score)
+            sampled = [per_episode[e] for e in rng.choices(episodes, k=len(episodes))]
+            denominator = sum(s["cases"] for s in sampled)
+            if denominator:
+                numerator = sum(round(s["score"] * s["cases"]) for s in sampled if s["score"] is not None)
+                boot.append(numerator / denominator)
     boot.sort()
     return {"complete": all(r["status"] in ("answered", "unsupported") for r in rows),
             "probe_counts": {"total": len(rows), "answered": len(answered),

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tivarq"
+version = "1.0.0"
+description = "Temporal Invalidation and Versioned Assertion Recall Quality benchmark"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{name = "Manmeet Singh"}]
+dependencies = []
+
+[project.optional-dependencies]
+hub = ["huggingface_hub>=0.36,<2"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+tivarq = "tivarq.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

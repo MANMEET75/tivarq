@@ -1,0 +1,12 @@
+# Adapter protocol `tivarq.adapter.v1`
+
+An adapter is a long-running process. Requests and responses are newline-delimited UTF-8 JSON. Each request has exactly one response. Write diagnostics only to stderr. Exit cleanly on EOF.
+
+1. `{"type":"capabilities"}` → `{"protocol":"tivarq.adapter.v1","adapter_version":"1.0.0","tracks":["structured"],"clock":true,"history":true,"inspection":false}`. Tracks can include both values. Declare optional support truthfully.
+2. `{"type":"reset","episode_id":"replacement-00","seed":20261001}` → `{"ok":true}`. Delete all previous episode state.
+3. `{"type":"ingest","event":{"event_id":"...","arrived_at":"2025-01-01T00:00:00Z","speaker":"user","text":"...","assertion":{"op":"set","slot":"workspace_theme","scope":"personal","value":"dark","effective_at":"2025-01-01T00:00:00Z"}}}` → `{"ok":true}`. `assertion` is present **only in the structured track**. Optional `expires_at` may be supplied. Duplicate `event_id` must be idempotent.
+4. `{"type":"advance_clock","as_of":"2025-01-04T00:00:00Z"}` → `{"ok":true}` when `clock` is declared. The runner sends this before applicable queries. An adapter can use `as_of` in the query even without active clock support, but must not declare clock if expiry/future activation will be wrong.
+5. `{"type":"query","question":"As of 2025-01-04, what is my workspace theme for personal?","as_of":"2025-01-04T00:00:00Z","slot":"workspace_theme","scope":"personal"}` → `{"state":"known","value":"dark"}`. `slot` and `scope` are **absent in the conversation track**; parse the natural-language question. Valid states: `known`, `unknown`, `withdrawn`, `needs_clarification`, `expired`. Non-`known` states use `null` value. `value` can be a string or list of strings. Optional raw answer, token usage and cost may be included; the official scorer ignores them for correctness.
+6. `{"type":"inspect"}` is reserved for adapters declaring `inspection`; v1 does not score inspected state.
+
+An error can be returned as `{"error":"reason"}`. The runner records query errors and marks that run incomplete. It does not pass gold answers or gold assertions in the conversation track. It also never passes test probe rows as files to the adapter. If your adapter needs a virtual clock, use `advance_clock` and `query.as_of`; do not read machine wall time. Run separate processes/configurations for each architecture style and report the track and capabilities.
